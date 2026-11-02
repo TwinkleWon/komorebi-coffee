@@ -1,0 +1,37 @@
+name: Release
+
+# Builds the prod flavor when a version tag is pushed (e.g. v1.0.0).
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.24.3
+          channel: stable
+          cache: true
+
+      # TODO(phase2): decode the upload keystore from secrets and configure
+      # `signingConfigs.release` before publishing to Google Play.
+      - run: flutter build appbundle --release --flavor prod -t lib/main_prod.dart
+      - run: flutter build apk --release --flavor prod -t lib/main_prod.dart
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            build/app/outputs/bundle/prodRelease/app-prod-release.aab
+            build/app/outputs/flutter-apk/app-prod-release.apk

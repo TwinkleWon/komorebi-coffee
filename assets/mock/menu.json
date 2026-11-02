@@ -1,0 +1,144 @@
+[
+  {
+    "id": "m_yakiimo",
+    "name": "焼き芋ほうじ茶ラテ",
+    "nameEn": "Roasted Sweet Potato Hojicha Latte",
+    "description": "香ばしいほうじ茶に、ねっとり甘い焼き芋のソースを重ねて。11月限定の一杯です。",
+    "category": "seasonal",
+    "price": 620,
+    "customizable": true,
+    "isNew": true,
+    "tone": "C98A4B",
+    "kcal": 280
+  },
+  {
+    "id": "m_marron",
+    "name": "和栗のマロンラテ",
+    "nameEn": "Japanese Chestnut Latte",
+    "description": "和栗のペーストをたっぷり。ミルクとエスプレッソでやさしくまとめました。",
+    "category": "seasonal",
+    "price": 640,
+    "customizable": true,
+    "isNew": true,
+    "tone": "9C6B4E",
+    "kcal": 310
+  },
+  {
+    "id": "m_blend",
+    "name": "こもれびブレンド",
+    "nameEn": "Komorebi House Blend",
+    "description": "チョコレートのような甘さと、すっきりとした後味。毎日飲みたいハウスブレンド。",
+    "category": "coffee",
+    "price": 420,
+    "customizable": true,
+    "tone": "5A3E2B",
+    "kcal": 8
+  },
+  {
+    "id": "m_latte",
+    "name": "カフェラテ",
+    "nameEn": "Caffè Latte",
+    "description": "エスプレッソとスチームミルクの、いちばんシンプルな組み合わせ。",
+    "category": "coffee",
+    "price": 480,
+    "customizable": true,
+    "tone": "B08661",
+    "kcal": 160
+  },
+  {
+    "id": "m_flatwhite",
+    "name": "フラットホワイト",
+    "nameEn": "Flat White",
+    "description": "リストレットを2ショット。コーヒーの輪郭がしっかり感じられる一杯。",
+    "category": "coffee",
+    "price": 520,
+    "customizable": true,
+    "tone": "8E6849",
+    "kcal": 120
+  },
+  {
+    "id": "m_coldbrew",
+    "name": "コールドブリュー",
+    "nameEn": "Cold Brew",
+    "description": "14時間かけて水出し。まろやかで、ほのかに甘い余韻。",
+    "category": "coffee",
+    "price": 520,
+    "customizable": true,
+    "tone": "3E2C22",
+    "kcal": 10
+  },
+  {
+    "id": "m_handdrip",
+    "name": "ハンドドリップ 本日の豆",
+    "nameEn": "Hand Drip of the Day",
+    "description": "ロースタリーから届いたシングルオリジンを、一杯ずつ丁寧に。",
+    "category": "coffee",
+    "price": 580,
+    "tone": "6E4B36",
+    "kcal": 8
+  },
+  {
+    "id": "m_hojicha",
+    "name": "ほうじ茶ラテ",
+    "nameEn": "Hojicha Latte",
+    "description": "京都の焙じ茶を濃く抽出。香ばしさとミルクのやさしさ。",
+    "category": "tea",
+    "price": 520,
+    "customizable": true,
+    "tone": "A8754A",
+    "kcal": 170
+  },
+  {
+    "id": "m_matcha",
+    "name": "抹茶ラテ",
+    "nameEn": "Matcha Latte",
+    "description": "宇治抹茶を使用。ほろ苦さと甘さのバランスを大切にしました。",
+    "category": "tea",
+    "price": 540,
+    "customizable": true,
+    "tone": "6F8460",
+    "kcal": 190
+  },
+  {
+    "id": "m_earlgrey",
+    "name": "アールグレイ",
+    "nameEn": "Earl Grey",
+    "description": "ベルガモットが華やかに香る、すっきりとした紅茶。",
+    "category": "tea",
+    "price": 450,
+    "customizable": true,
+    "tone": "B9875E",
+    "kcal": 2
+  },
+  {
+    "id": "m_basque",
+    "name": "バスクチーズケーキ",
+    "nameEn": "Basque Cheesecake",
+    "description": "表面はほろ苦く、中はとろり。コーヒーとの相性を考えた焼き加減です。",
+    "category": "food",
+    "price": 480,
+    "tone": "D3A86E",
+    "kcal": 390
+  },
+  {
+    "id": "m_cinnamon",
+    "name": "シナモンロール",
+    "nameEn": "Cinnamon Roll",
+    "description": "カルダモンをきかせた北欧スタイル。温めてお出しします。",
+    "category": "food",
+    "price": 380,
+    "tone": "C08D5A",
+    "kcal": 340
+  },
+  {
+    "id": "m_fruitsando",
+    "name": "季節のフルーツサンド",
+    "nameEn": "Seasonal Fruit Sandwich",
+    "description": "旬のフルーツと軽い生クリームを、ふんわり食パンで。",
+    "category": "food",
+    "price": 560,
+    "available": false,
+    "tone": "D9A38F",
+    "kcal": 320
+  }
+]

@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FLUTTER_VERSION: 3.24.3
+
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+
+      # Generated files are committed so the repo builds without extra steps;
+      # this fails the build if someone forgot to regenerate them.
+      - name: Verify generated code is up to date
+        run: |
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n
+          git diff --exit-code -- lib
+
+      - name: Check formatting
+        run: |
+          git ls-files 'lib/*.dart' 'test/*.dart' \
+            | grep -vE '\.(g|freezed)\.dart$|lib/l10n/generated/' \
+            | xargs dart format --output=none --set-exit-if-changed
+
+      - run: flutter analyze
+
+      # Golden images depend on the host rasterizer, so they run locally only.
+      - run: flutter test --exclude-tags golden --coverage
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/lcov.info
+
+  build-android:
+    needs: analyze-and-test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        flavor: [dev, stg]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - run: flutter build apk --release --flavor ${{ matrix.flavor }} -t lib/main_${{ matrix.flavor }}.dart
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk-${{ matrix.flavor }}
+          path: build/app/outputs/flutter-apk/app-${{ matrix.flavor }}-release.apk
+
+  build-web:
+    needs: analyze-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - run: flutter build web --release -t lib/main_stg.dart
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web-stg
+          path: build/web

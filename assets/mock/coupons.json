@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cp_welcome",
+    "title": "ご入会特典 ドリンク1杯無料",
+    "description": "KOMOREBI メンバーへようこそ。お好きなドリンクを1杯プレゼントします。",
+    "kind": "free_item",
+    "value": 0,
+    "expiresInDays": 30,
+    "conditions": ["Mサイズまでのドリンクが対象です", "1会計につき1枚までご利用いただけます", "モバイルオーダーではご利用いただけません"]
+  },
+  {
+    "id": "cp_rainy",
+    "title": "雨の日限定 ¥50引き",
+    "description": "雨の日も、あたたかい一杯でひと休みを。",
+    "kind": "yen_off",
+    "value": 50,
+    "expiresInDays": 0,
+    "conditions": ["本日のみ有効です", "全ドリンクが対象です"]
+  },
+  {
+    "id": "cp_autumn",
+    "title": "秋のスイーツ 20%OFF",
+    "description": "モンブランや焼き芋のチーズケーキなど、秋のスイーツが20%OFFに。",
+    "kind": "percent_off",
+    "value": 20,
+    "expiresInDays": 7,
+    "conditions": ["季節限定スイーツが対象です", "他のクーポンとの併用はできません"]
+  },
+  {
+    "id": "cp_morning",
+    "title": "モーニングセット ¥100引き",
+    "description": "朝の時間を少しだけ贅沢に。ドリンクとフードのセットがお得です。",
+    "kind": "yen_off",
+    "value": 100,
+    "expiresInDays": 3,
+    "conditions": ["11:00までのご注文に限ります", "ドリンクとフードを同時にご注文の場合に限ります"]
+  },
+  {
+    "id": "cp_sizeup",
+    "title": "サイズアップ無料",
+    "description": "いつものドリンクを、ひとつ大きなサイズで。",
+    "kind": "size_up",
+    "value": 0,
+    "expiresInDays": 14,
+    "conditions": ["S→M、M→Lへのサイズアップが対象です"]
+  },
+  {
+    "id": "cp_beans",
+    "title": "コーヒー豆 ¥300引き",
+    "description": "清澄白河ロースタリーで焙煎した豆を、ご自宅でも。",
+    "kind": "yen_off",
+    "value": 300,
+    "expiresInDays": 21,
+    "conditions": ["200g以上のコーヒー豆が対象です"]
+  },
+  {
+    "id": "cp_summer",
+    "title": "夏のアイスコーヒー 10%OFF",
+    "description": "夏季限定のクーポンです。",
+    "kind": "percent_off",
+    "value": 10,
+    "expiresInDays": -5,
+    "conditions": ["アイスコーヒーが対象です"]
+  }
+]

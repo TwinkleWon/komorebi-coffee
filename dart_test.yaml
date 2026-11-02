@@ -1,0 +1,4 @@
+tags:
+  golden:
+    # Golden images depend on the host's font rasterizer, so CI skips them
+    # (`--exclude-tags golden`) and they are verified locally.
